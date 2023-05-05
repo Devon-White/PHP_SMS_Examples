@@ -1,0 +1,6 @@
+{
+    "require": {
+        "signalwire/signalwire": "^2.3",
+        "guzzlehttp/guzzle": "^7.5"
+    }
+}
