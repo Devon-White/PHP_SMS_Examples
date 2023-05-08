@@ -5,7 +5,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 
 $spaceUrl = "example.signalwire.com";
-$projectID = "Project ID here";
+$projectID = "ProjectID Here";
 $authToken = "Auth Token Here";
 
 $base64 = base64_encode("$projectID:$authToken");
@@ -17,9 +17,10 @@ $headers = [
 ];
 $options = [
     'form_params' => [
-        'From' => '+1XXXXXXXXX',
-        'To' => '+1YYYYYYYYY',
-        'Body' => 'Hello from SignalWire!'
+        'From' => '+1XXXXXXXXXX',
+        'To' => '+1YYYYYYYYYY',
+        'Body' => 'Hello from SignalWire!',
+        'MediaUrl' => "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"
     ]];
 $request = new Request('POST', "https://$spaceUrl/api/laml/2010-04-01/Accounts/$projectID/Messages", $headers);
 $res = $client->sendAsync($request, $options)->wait();
