@@ -5,8 +5,11 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 
 $spaceUrl = "example.signalwire.com";
-$projectID = "ProjectID Here";
+$projectID = "Project ID Here";
 $authToken = "Auth Token Here";
+
+$SwNum = "SW Number Here";
+$DestinationNumber = "Destination Number Here";
 
 $base64 = base64_encode("$projectID:$authToken");
 
@@ -17,9 +20,9 @@ $headers = [
 ];
 $options = [
     'form_params' => [
-        'From' => '+1XXXXXXXXXX',
-        'To' => '+1YYYYYYYYYY',
-        'Body' => 'Hello from SignalWire!',
+        'From' => $SwNum,
+        'To' => $DestinationNumber,
+        'Body' => 'Hello, this is a message test for the Compatibility Rest API!',
         'MediaUrl' => "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"
     ]];
 $request = new Request('POST', "https://$spaceUrl/api/laml/2010-04-01/Accounts/$projectID/Messages", $headers);
